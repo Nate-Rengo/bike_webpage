@@ -1,0 +1,16 @@
+{% extends "base_user.html" %}
+{% block title%} Bike Form {%endblock%}
+{% block content%}
+<form action="/update/{{id}}" method="post">
+        <label> Brand:</label>
+        <input type="text" required="required" name="brand" value={{brand}}> <br>
+        <label> Model:</label>
+        <input type="text" required="required" name="model" value={{model}}><br>
+        <label> Weight:</label>
+        <input type="number" min=0 step="0.01" required="required" name="weight" value={{weight}}><br>
+        <label> Price:</label>
+        <input type="number" min=0 step="0.01" required="required"  name="price" value={{price}}><br>
+        <button type="submit" name="action" value="submit_query">UPDATE</button>
+    </form>
+
+{% endblock %}

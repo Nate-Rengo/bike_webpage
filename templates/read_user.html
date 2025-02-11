@@ -1,0 +1,30 @@
+{% extends "base_user.html" %}
+{% block title%} Read User {%endblock%}
+{% block content%}
+
+<table>
+    <thead>
+    <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Age</th>
+            <th>USER ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in users%}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.username}}</td>
+            <td>{{i.password}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.id}}</td>
+        </tr>
+    {%endfor%}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

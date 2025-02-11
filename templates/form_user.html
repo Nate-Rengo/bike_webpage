@@ -1,0 +1,16 @@
+{% extends "base_user.html" %}
+{% block title%} User Form {%endblock%}
+{% block content%}
+<form action="/create_user" method="post">
+        <label> Name:</label>
+        <input type="text" required="required" name="name" value={{name}}> <br>
+        <label> Username:</label>
+        <input type="text" required="required" name="username" value={{username}}><br>
+        <label> Password:</label>
+        <input type="password" required="required" name="password" value={{password}}><br>
+        <label> Age:</label>
+        <input type="number" min=0 required="required" name="age" value={{age}}><br>
+        <button type="submit" name="action" value="submit_query">Create User</button>
+    </form>
+
+{% endblock %}

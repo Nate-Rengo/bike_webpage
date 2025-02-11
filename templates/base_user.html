@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<nav>
+    <ul>
+     <li><a href='/'>HOME</a></li>
+        {% if current_user.is_authenticated == False %}
+      <li><a href='/create_user'>CREATE New User</a></li>
+      <li><a href='/login'>LOGIN</a></li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+            <li><a href='/view_all_users'>View ALL USERS</a></li>
+            <li><a href='/update_user'>Update PASSWORD</a></li>
+            <li><a href='/logout'>LOGOUT</a></li>
+            <li><a href='/create_bike'>CREATE BIKE</a></li>
+            <li><a href='/read'>ALL BIKES</a></li>
+        {% endif %}
+    </ul>
+  </nav>
+
+    {% block content %}
+{% endblock %}
+
+</body>
+</html>

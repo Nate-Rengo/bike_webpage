@@ -1,0 +1,35 @@
+{% extends "base_user.html" %}
+{% block title%} Read bike {%endblock%}
+{% block content%}
+<script src="/static/code.js"> </script>
+<h1 id="user_id" hidden="true">{{current_user.id}}</h1>
+<table>
+    <thead>
+    <tr>
+            <th>BRAND</th>
+            <th>Model</th>
+            <th>Weight</th>
+            <th>Price</th>
+            <th>USER ID</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in bikes%}
+        <tr>
+            <td>{{i.brand}}</td>
+            <td>{{i.model}}</td>
+            <td>{{i.weight}}</td>
+            <td>${{i.price}}</td>
+            <td>{{i.user_id}} </td>
+            <td><a href='/update/{{i.id}}' class="{{i.user_id}}" style="visibility: hidden" >Update</a></td>
+            <td><a href='/delete/{{i.id}}' class="{{i.user_id}}" style="visibility: hidden" >Delete</a></td>
+        </tr>
+    {%endfor%}
+    </tbody>
+
+
+</table>
+
+{% endblock %}

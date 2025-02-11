@@ -1,0 +1,13 @@
+{% extends "base_user.html" %}
+{% block title%} Update User {%endblock%}
+
+{% block content %}
+
+<form action="/update_user" method="post">
+        <label> Current Password:</label>
+        <input type="password" required="required" name="password" ><br>
+        <label> New Password:</label>
+        <input type="password" required="required" name="newPassword" ><br>
+        <button type="submit" name="action" value="submit_query">Update password</button>
+    </form>
+{% endblock%}
